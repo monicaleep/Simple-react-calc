@@ -4,11 +4,18 @@ class Calculator extends Component {
     state = {
       num1:0,
       num2:0,
-      result: 0
+      result: 'Addition Results go here'
     }
     setNum = (e, num) =>{
       this.setState({
         [num]: parseInt(e.target.value)
+      })
+    }
+    setResult = () =>{
+      this.setState({
+        result: this.state.num1 + this.state.num2,
+        num1: 0,
+        num2: 0
       })
     }
     render() {
@@ -29,8 +36,8 @@ class Calculator extends Component {
                 value={this.state.num2}
                 onChange={(e)=> this.setNum(e,'num2')}
                />
-              <button>=</button>
-              <h3>Addition results go here!</h3>
+              <button onClick={this.setResult}>=</button>
+              <h3>{this.state.result}</h3>
             </div>
           </div>
         )
