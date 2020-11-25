@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 class Calculator extends Component {
+    state = {
+      num1:0,
+      num2:0,
+      result: 0
+    }
     render() {
         return (
           <div className="container">
